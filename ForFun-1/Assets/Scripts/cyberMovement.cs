@@ -64,12 +64,12 @@ public class cyberMovement : MonoBehaviour
 
         if (screamCount >= screamCounter)
         {
-            ani.SetBool("isScreaming", true);
+            ani.SetBool("isShooting", true);
             screamCount = 0;
         }
         else
         {
-            ani.SetBool("isScreaming", false);
+            ani.SetBool("isShooting", false);
         }
     }
 }
