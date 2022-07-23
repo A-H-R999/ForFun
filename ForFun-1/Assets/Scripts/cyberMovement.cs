@@ -39,11 +39,17 @@ public class cyberMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) <= minDistance)
         {
             ani.SetBool("isAttacking", true);
-           // Lossing.slenderCatch = true;
+            objective.cyberAttack = true;
         }
         else
         {
             ani.SetBool("isAttacking", false);
+        } 
+
+        var attacking = ani.GetBool("isAttacking");
+        if (attacking == true)
+        {
+            objective.cyberAttack = true;
         }
 
         if (Vector3.Distance(transform.position, player.position) < maxDistance)
@@ -70,6 +76,14 @@ public class cyberMovement : MonoBehaviour
         else
         {
             ani.SetBool("isShooting", false);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            objective.cyberAttack = true;
         }
     }
 }

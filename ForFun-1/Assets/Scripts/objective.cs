@@ -95,8 +95,6 @@ public class objective : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
             lossingImage.SetActive(true);
-            lossingText.SetActive(true);
-            returnButton.SetActive(true);
         }
     }
 
