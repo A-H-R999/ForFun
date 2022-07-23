@@ -55,7 +55,7 @@ public class cyberMovement : MonoBehaviour
             }
             ani.SetBool("isRunning", true);
         }
-        else
+        else if(Vector3.Distance(transform.position, player.position) > maxDistance)
         {
             ani.SetBool("isRunning", false);
         }
